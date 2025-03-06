@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Android Assignment</string>
+    <string name="location_permission_denied">Location permission denied 😞</string>
+    <string name="location_permission_denied_prompt_end">You\'ll have to go to settings to give permission</string>
+    <string name="error_title">Error</string>
+    <string name="retry_action">Retry</string>
+    <string name="unknown_error">Unknown error.</string>
+    <string name="welcome_title">Welcome!</string>
+    <string name="location_accepted_caption">You\'ve given us location permissions. \n\nYou can retrieve the results for your location by pressing the \'Refresh\' button!</string>
+    <string name="permissions_title">Permissions 🙏</string>
+    <string name="permissions_request_text">You haven\'t yet given the application access to your location. \n\nWe will need it to fulfill the request of finding venues near you.</string>
+    <string name="give_location_cta">Give Location Access</string>
+    <string name="venue_name_title">Venue Name: %1$s</string>
+    <string name="venue_location_title">Venue Location: %1$s</string>
+    <string name="refresh_cta">Refresh</string>
+    <string name="go_to_settings_cta">Go to Settings</string>
+</resources>
