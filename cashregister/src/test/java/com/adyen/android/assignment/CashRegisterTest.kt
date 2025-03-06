@@ -112,15 +112,14 @@ class CashRegisterTest {
         initBalance()
         val beforeTransaction = cashRegisterBalance.getCount(Bill.TWENTY_EURO)
         val pricePaid = Change()
-            .add(Bill.TEN_EURO, 1)
             .add(Bill.TWENTY_EURO, 1)
 
         val itemPrice = 10_00L
 
         val change = cashRegister.performTransaction(itemPrice, pricePaid)
         Assert.assertTrue(
-            change.getCount(Bill.TWENTY_EURO) == 1
-                    && (cashRegisterBalance.getCount(Bill.TWENTY_EURO) + 1) == beforeTransaction
+            change.getCount(Bill.TEN_EURO) == 1
+                    && (cashRegisterBalance.getCount(Bill.TEN_EURO) + 1) == beforeTransaction
         )
     }
 
@@ -148,7 +147,7 @@ class CashRegisterTest {
                 && (cashRegisterBalance.getCount(Bill.TWENTY_EURO) + 1) == beforeTransaction20
                 && (cashRegisterBalance.getCount(Bill.FIVE_EURO) + 1) == beforeTransaction5
 
-        val totalsEqual = initialTotal == (change.total + cashRegisterBalance.total)
+        val totalsEqual = initialTotal + itemPrice == cashRegisterBalance.total
         Assert.assertTrue(
             notesInChange && notesRemovedFromRegister && totalsEqual
         )

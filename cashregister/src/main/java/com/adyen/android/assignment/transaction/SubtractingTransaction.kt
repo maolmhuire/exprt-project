@@ -10,6 +10,11 @@ class SubtractingTransaction(
 
     override fun performTransaction(): Change {
         val change = Change()
+        // Add to balance
+        input.pricePaid.getElements().forEach {
+            input.balanceChange.add(it, 1)
+        }
+        // Remove appropriate change.
         elementsToRemove.forEach {
             input.balanceChange.remove(it, 1)
             change.add(it, 1)
